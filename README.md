@@ -18,7 +18,7 @@ To begin this lab, I created a logical diagram of the network that will host the
 <img src="NetworkDiagram.PNG" alt="Network Diagram" width="350">
 
 To ensure that the Splunk server can send logs, I created my own configuration named "inputs.conf" in the file: SplunkUniversalForwarder > etc > local > system. This will allow Splunk to send logs my newly created index named "endpoint". I am also using sysmon-modular for easier maintenance and specific configs.
-<img src="inputsConf.PNG" alt="inputs.conf" width="350">
+<img src="inputsConf.png" alt="inputs.conf" width="350">
 
 The Splunk Universal Forwarder on my Windows 10 machine is sending data to the Splunk server through port 9997 (indexing port) which I enabled. I accessed Splunk through Windows 10 by typing the Splunk Server IP address followed by port 8000 (Splunk port) into my browser. In the search bar, I typed "index=endpoint" to find events related to that index. The screenshot shows that Splunk is successfully ingesting logs. 
 <img src="SplunkIndex.PNG" alt="Splunk Index" width="350">
