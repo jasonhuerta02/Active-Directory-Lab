@@ -7,7 +7,7 @@ The Active Directory and SIEM Lab was designed to simulate a domain environment 
 ### Skills Learned
 
 - Configured Active Directory for user account provisioning
-- Coducted brute-force attacks using Kali Linux to simulate an attack
+- Conducted brute-force attacks using Kali Linux to simulate an attack
 - Configured Splunk to ingest and analyze security logs
 - Utilized Atomic Red Team tests to emulate MITRE ATT&CK techniques
 - Deep understanding of log sources and event types for threat detection
