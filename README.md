@@ -15,4 +15,4 @@ The Active Directory and SIEM Lab was designed to simulate a domain environment 
 ## Steps
 
 To begin this lab, I created a logical diagram of the network that will host the Virtual Machines to better visualize the environment.
-![image](https://github.com/user-attachments/assets/e7acd300-8317-49e3-a6ae-ce79e85970ac)
+<img src="screenshots/NetworkDiagram.png" alt="Network Diagram" width="50%">
