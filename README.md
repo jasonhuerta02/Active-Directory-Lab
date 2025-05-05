@@ -21,31 +21,31 @@ To ensure that the Splunk server can send logs, I created my own configuration n
 <img src="inputsConf.png" alt="inputs.conf" width="350">
 
 The Splunk Universal Forwarder on my Windows 10 machine is sending data to the Splunk server through port 9997 (indexing port) which I enabled. I accessed Splunk through Windows 10 by typing the Splunk Server IP address followed by port 8000 (Splunk port) into my browser. In the search bar, I typed "index=endpoint" to find events related to that index. The screenshot shows that Splunk is successfully ingesting logs. 
-<img src="SplunkIndex.PNG" alt="Splunk Index" width="350">
+<img src="SplunkIndex.png" alt="Splunk Index" width="350">
 
 The next step is to configure the Active Directory. I created a forest which acts as a container for a domain. I gave the root domain name: jason.project.
-<img src="DeploymentConfig.PNG" alt="Deploymnet Configuration" width="350">
+<img src="DeploymentConfig.png" alt="Deploymnet Configuration" width="350">
 
 To simulate an enterprise environment, I created an IT and HR department with a user in each department. 
-<img src="AD-userJohn.PNG" alt="John_Smith" width="200"> <img src="AD-userSally.PNG" alt="Sally_Garza" width="200">
+<img src="AD-userJohn.png" alt="John_Smith" width="200"> <img src="AD-userSally.PNG" alt="Sally_Garza" width="200">
 
 In order to use the jason.project domain on the Windows 10 machine, I had to change its IPv4 settings by entering the IP address of the Active Directory into the DNS server.
-<img src="DNS.PNG" alt="DNS Server Address" width="350">
+<img src="DNS.png" alt="DNS Server Address" width="350">
 
 I then joined the domain using Administrator credentials.
-<img src="Domain.PNG" alt="Domain" width="350">
+<img src="Domain.png" alt="Domain" width="350">
 
 Once the system resets, I am able to sign in as one of the two users I created in AD through the JASON domain. 
-<img src="DomainLogin.PNG" alt="Domain Login" width="350">
+<img src="DomainLogin.png" alt="Domain Login" width="350">
 
 Now, to simulate brute-force password attacks, I enabled Remote Desktop (RDP) for user John_Smith and Sally_Garza.
-<img src="enableRDP" alt="RDP" width="350">
+<img src="enableRDP.png" alt="RDP" width="350">
 
 On Kali Linux, I created a filed named passwords.txt with common password names as well as the password of John Smith's account (P@ssw0rd123).
-<img src="passwordsList.PNG" alt="passwords.txt" width="350">
+<img src="passwordsList.png" alt="passwords.txt" width="350">
 
 I used a common password cracking tool called Hydra, and input the corresponding information in the input fields, such as IP address, user name, protocol, and password name/password list. 
-<img src="hydraCommand.PNG" alt="Hydra" width="350">
+<img src="hydraCommand.png" alt="Hydra" width="350">
 
 
 
