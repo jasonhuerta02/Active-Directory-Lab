@@ -15,6 +15,10 @@ The Active Directory and SIEM Lab was designed to simulate a domain environment 
 ## Steps
 
 To begin this lab, I created a logical diagram of the network that will host the Virtual Machines to better visualize the environment.
-<img src="NetworkDiagram.PNG" alt="Network Diagram" width="400">
+<img src="NetworkDiagram.PNG" alt="Network Diagram" width="350">
+
+After setting up Virtual Machines for the Active Directory Server, Splunk Server (Ubuntu), Windows 10 machine, and Kali Linux machine, I created an index on Splunk named "endpoint" to ensure I was collecting logs. The Splunk Universal Forwarder on my Windows 10 machine is sending data to the Splunk server through port 9997 which I enabled.
+<img src="SplunkIndex.PNG" alt="Network Diagram" width="350">
+
 
 
