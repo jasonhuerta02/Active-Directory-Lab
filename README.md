@@ -72,5 +72,5 @@ To further analyze these events, I clicked on EventCode. This feature shows Wind
 
 Splunk also provides network information, showing where exactly the source of the attack is coming from. In the screenshot, it shows the Kali Linux workstation, along with its IP address.
 
-<img src="networkInfo.png" alt="Network Information" width="400">
+<img src="networkInfo.png" alt="Network Information" width="300">
 
