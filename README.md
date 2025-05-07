@@ -50,13 +50,25 @@ Now, to simulate brute-force password attacks, I enabled Remote Desktop (RDP) fo
 
 <img src="EnableRDP.png" alt="RDP" width="350">
 
-On Kali Linux, I created a filed named passwords.txt with common password names as well as the password of John Smith's account (P@ssw0rd123).
+On Kali Linux, I created a filed named passwords.txt with common password names as well as the password of my target, Sally Garza. The password for this account is $ecure123.
 
 <img src="passwordsList.png" alt="passwords.txt" width="350">
 
-I used a common password cracking tool called Hydra, and input the corresponding information in the input fields, such as IP address, user name, protocol, and password name/password list. 
+To perform the brute force, I used the tool "Hydra", which supports many different protocols, like RDP. For the command, I use the -l flag to specify the user account I am targeting (Sally) and -P to use try every password in passwords.txt. 
 
 <img src="hydraCommand.png" alt="Hydra" width="400">
+
+Once the command has been executed, Hydra verifies that the password has been found.
+
+<img src="hydraOutput.png" alt="Hydra" width="400">
+
+After obtaining the password of the user Sally, I checked Splunk to analyze the logs generated from the brute force attack. To see events relating to Sally's account, I typed: index="endpoint" Sally_Garza, and notice that events were showing.
+
+<img src="sallyIndex.png" alt="Hydra" width="400">
+
+To further analyze these events, I clicked on EventCode. This feature shows Windows Event IDs that identify events recorded in the Windows Event Log. The Event ID 4625 is the first one to show up, with a count of 12. Event ID 4625 refers to failed log-on attempts, showing the failed attempts from the passwords list. In the real-world, seeing an event like this with a high count is extremely suspicious. The following Event ID is 4624 and represents the account successfully logging on. It can be assumed that after the brute force attempts, the adversary successfully logged on to Sally's account. 
+
+<img src="sallyEvents.png" alt="Hydra" width="400">
 
 
 
