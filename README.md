@@ -54,7 +54,7 @@ On Kali Linux, I created a filed named passwords.txt with common password names 
 
 <img src="passwordsList.png" alt="passwords.txt" width="350">
 
-To perform the brute force, I used the tool "Hydra", which supports many different protocols, like RDP. For the command, I use the -l flag to specify the user account I am targeting (Sally) and -P to use try every password in passwords.txt. 
+To perform the brute force, I used the tool "Hydra", which supports many different protocols, like RDP. For the command, I use the -l flag to specify the user account I am targeting (Sally) and -P to try every password in passwords.txt. 
 
 <img src="hydraCommand.png" alt="Hydra Command" width="550">
 
