@@ -56,21 +56,21 @@ On Kali Linux, I created a filed named passwords.txt with common password names 
 
 To perform the brute force, I used the tool "Hydra", which supports many different protocols, like RDP. For the command, I use the -l flag to specify the user account I am targeting (Sally) and -P to use try every password in passwords.txt. 
 
-<img src="hydraCommand.png" alt="Hydra" width="400">
+<img src="hydraCommand.png" alt="Hydra Command" width="550">
 
 Once the command has been executed, Hydra verifies that the password has been found.
 
-<img src="hydraOutput.png" alt="Hydra" width="400">
+<img src="hydraOutput.png" alt="Hydra Output" width="550">
 
 After obtaining the password of the user Sally, I checked Splunk to analyze the logs generated from the brute force attack. To see events relating to Sally's account, I typed: index="endpoint" Sally_Garza, and notice that events were showing.
 
-<img src="sallyIndex.png" alt="Hydra" width="400">
+<img src="sallyIndex.png" alt="Sally Index" width="450">
 
 To further analyze these events, I clicked on EventCode. This feature shows Windows Event IDs that identify events recorded in the Windows Event Log. The Event ID 4625 is the first one to show up, with a count of 12. Event ID 4625 refers to failed log-on attempts, showing the failed attempts from the passwords list. In the real-world, seeing an event like this with a high count is extremely suspicious. The following Event ID is 4624 and represents the account successfully logging on. It can be assumed that after the brute force attempts, the adversary successfully logged on to Sally's account. 
 
-<img src="sallyEvents.png" alt="Hydra" width="400">
+<img src="sallyEvents.png" alt="Sally Events" width="400">
 
+Splunk also provides network information, showing where exactly the source of the attack is coming from. In the screenshot, it shows the Kali Linux workstation, along with its IP address.
 
-
-
+<img src="networkInfo.png" alt="Network Information" width="400">
 
