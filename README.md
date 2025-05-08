@@ -14,7 +14,7 @@ The Active Directory and SIEM Lab was designed to simulate a domain environment 
 
 ## Steps
 
-To begin this lab, I created a logical diagram of the network that will host the Virtual Machines to better visualize the environment. I then set up Virtual Machines for the Active Directory Server, Splunk Server (Ubuntu), Windows 10 machine, and Kali Linux machine.
+To begin this lab, I created a logical diagram of the network that will host the Virtual Machines to better visualize the environment. I then set up Virtual Machines for the Active Directory Server, Splunk Server (Ubuntu), Windows 10 machine, and Kali Linux machine. Rather than statically assign IP addresses to each VM, I let VMWare's internal DHCP server assign addresses.
 
 <img src="NetworkDiagram.PNG" alt="Network Diagram" width="350">
 
@@ -50,11 +50,11 @@ Now, to simulate brute-force password attacks, I enabled Remote Desktop (RDP) fo
 
 <img src="EnableRDP.png" alt="RDP" width="350">
 
-On Kali Linux, I created a filed named passwords.txt with common password names as well as the password of my target, Sally Garza. The password for this account is $ecure123.
+On Kali Linux, I created a filed named passwords.txt with common password names as well as the password the user I'm targeting, Sally Garza. The password for this account is $ecure123.
 
 <img src="passwordsList.png" alt="passwords.txt" width="350">
 
-To perform the brute force, I used the tool "Hydra", which supports many different protocols, like RDP. For the command, I use the -l flag to specify the user account I am targeting (Sally) and -P to try every password in passwords.txt. 
+To perform a brute force attack, I used the tool "Hydra", which supports many different protocols, like RDP. For the command, I use the -l flag to specify the user account I am targeting (Sally) and -P to try every password in passwords.txt. 
 
 <img src="hydraCommand.png" alt="Hydra Command" width="550">
 
