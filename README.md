@@ -74,3 +74,11 @@ Splunk also provides network information, showing where exactly the source of th
 
 <img src="networkInfo.png" alt="Network Information" width="300">
 
+Using Atomic Red Team is great for emulating adversary attack techniques based on the MITRE ATT&CK framework. In the persistence technqiue category, there's a sub-category called "Create account" and "Local account". This technique allows adversaries to create a local account on a victim's system to maintain access. I used the command "Invoke-AtomicTest T1136.001" in PowerShell to emulate this technique.
+
+<img src="invokeAtomic.png" alt="Invoke Atomic Test" width="400">
+
+I then checked Splunk to check events relating to "NewLocalUser". Thankfully, Splunk was able to capture this event. Atomic Red Team is very useful for testing what attacks can be detected or which ones can go undetected. As a security practicioner, it is crucial to discover what attacks your SIEM may be blind to.
+
+<img src="NewLocalUser.png" alt="New Local User" width="400">
+
