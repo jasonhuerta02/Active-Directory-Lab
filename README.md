@@ -24,7 +24,7 @@ To ensure that the Splunk server can send logs, I created my own configuration n
 
 The Splunk Universal Forwarder on my Windows 10 machine is sending data to the Splunk server through port 9997 (indexing port) which I enabled. I accessed Splunk through Windows 10 by typing the Splunk Server IP address followed by port 8000 (Splunk port) into my browser. In the search bar, I typed "index=endpoint" to find events related to that index. The screenshot shows that Splunk is successfully ingesting logs.
 
-<img src="SplunkIndex.png" alt="Splunk Index" width="400">
+<img src="SplunkIndex.png" alt="Splunk Index" width="500">
 
 The next step is to configure the Active Directory. I created a forest which acts as a container for a domain. I gave the root domain name: jason.project.
 
@@ -80,5 +80,5 @@ Using Atomic Red Team is great for emulating adversary attack techniques based o
 
 I then checked Splunk to check events relating to "NewLocalUser". Thankfully, Splunk was able to capture this event. Atomic Red Team is very useful for testing what attacks can be detected or which ones can go undetected. As a security practicioner, it is crucial to discover what attacks your SIEM may be blind to.
 
-<img src="NewLocalUser.png" alt="New Local User" width="400">
+<img src="NewLocalUser.png" alt="New Local User" width="350">
 
